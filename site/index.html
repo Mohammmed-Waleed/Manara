@@ -556,7 +556,7 @@ footer .container{display:flex;justify-content:space-between;gap:10px;flex-wrap:
     try{ renderer = new THREE.WebGLRenderer({canvas:canvas, antialias:true, alpha:true}); }catch(e){ return; }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio||1, 2));
     var scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x081120, 0.045);
+    scene.fog = new THREE.FogExp2(0x081120, 0.032);
     var camera = new THREE.PerspectiveCamera(42, 1, 0.1, 200);
     var world = new THREE.Group(); scene.add(world);
     world.position.set(4.2, -1.2, 0);
@@ -627,7 +627,7 @@ footer .container{display:flex;justify-content:space-between;gap:10px;flex-wrap:
     var orbit = {theta:-0.5, phi:0.16, r:16}, target = {theta:-0.5, phi:0.16}, drag = false, lx=0, ly=0;
     function placeCam(){
       camera.position.set(world.position.x + orbit.r*Math.sin(orbit.theta)*Math.cos(orbit.phi), 2.6 + orbit.r*Math.sin(orbit.phi), orbit.r*Math.cos(orbit.theta)*Math.cos(orbit.phi));
-      camera.lookAt(world.position.x - 2.2, 2.2, 0);
+      camera.lookAt(world.position.x - 4.2, 2.6, 0);
     }
     canvas.addEventListener('pointerdown', function(e){ if(e.pointerType==='touch') return; drag=true; lx=e.clientX; ly=e.clientY; canvas.setPointerCapture(e.pointerId); });
     canvas.addEventListener('pointermove', function(e){
@@ -643,7 +643,7 @@ footer .container{display:flex;justify-content:space-between;gap:10px;flex-wrap:
     function resize(){
       var w = canvas.clientWidth, hh = canvas.clientHeight; if(!w||!hh) return;
       renderer.setSize(w, hh, false); camera.aspect = w/hh; camera.updateProjectionMatrix();
-      var narrow = w < 760; world.position.x = narrow ? 1.2 : 4.2; sea.position.x = 0; orbit.r = narrow ? 19 : 16;
+      var narrow = w < 760; world.position.x = narrow ? 2.4 : 6.2; sea.position.x = 0; orbit.r = narrow ? 27 : 23;
     }
     resize(); addEventListener('resize', resize);
 
