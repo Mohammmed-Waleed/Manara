@@ -17,7 +17,8 @@ const steps = [
   { number: "02", title: "Match", text: "The right expertise makes all the difference. We connect you with independent consultants whose experience fits your needs." },
   { number: "03", title: "Deliver", text: "From insight to action. Work directly with your consultant on clear priorities, practical solutions, and a considered path ahead." },
 ];
-const navigation = [{ label: "Services", id: "services" }, { label: "How we work", id: "how-we-work" }, { label: "Why Manara", id: "why-manara" }];
+const navigation = [{ label: "Services", id: "services" }, { label: "How we work", id: "how-we-work" }, { label: "Why Manara", id: "why-manara" }, { label: "Founder", id: "founder" }];
+const founderSkills = ["Backend systems", "AI agents & RAG", "Computer vision", "Cybersecurity ML", "Device platforms", "Full-stack web"];
 const industries = ["Technology", "Retail & E-commerce", "Healthcare", "Financial Services", "Education", "Professional Services", "Hospitality", "Startups & SMEs"];
 
 export default function App() {
@@ -82,6 +83,35 @@ export default function App() {
 
         <section id="why-manara" className="section why-section" aria-labelledby="why-heading">
           <div className="container why-layout"><div className="why-copy reveal"><p className="eyebrow">Why Manara</p><h2 id="why-heading">A name with meaning.<br />A purpose with depth.</h2><p>In Arabic, Manara means lighthouse. A point of clarity on the horizon. A steady light when the way ahead feels uncertain.</p><p>That’s the idea behind our collective. Independent expertise, brought together with a shared purpose: to help you see your possibilities clearly and find your own way forward.</p></div><div className="arabic-panel reveal"><p className="arabic-word" lang="ar" dir="rtl">منارة</p><p className="arabic-caption">MANARA · Arabic for “lighthouse”</p><p className="arabic-definition">Clarity. Direction. Possibility.</p></div></div>
+        </section>
+
+        <section id="founder" className="section founder-section" aria-labelledby="founder-heading">
+          <div className="container founder-layout">
+            <div className="founder-card reveal">
+              <div className="founder-mark" aria-hidden="true">MW</div>
+              <div>
+                <p className="founder-name">Mohammed Waleed</p>
+                <p className="founder-role">Founder, Manara</p>
+              </div>
+              <ul className="founder-meta">
+                <li><span>Based in</span>Hassan, Karnataka</li>
+                <li><span>Background</span>B.E. Computer Science</li>
+                <li><span>Works in</span>Software &amp; AI</li>
+              </ul>
+            </div>
+            <div className="founder-copy reveal">
+              <p className="eyebrow">Meet the founder</p>
+              <h2 id="founder-heading">Built by an engineer who cares about what works.</h2>
+              <p>I’m Mohammed Waleed, a software developer who builds backend systems, device platforms and AI tools. My open-source work spans computer vision, cybersecurity machine learning and safe AI agents.</p>
+              <p>I started Manara to bring that same mindset to clients: listen first, match the right expertise to the problem, and care about the gap between an idea that sounds good and a solution that actually helps.</p>
+              <div className="card-tags founder-tags">{founderSkills.map((skill) => <span key={skill}>{skill}</span>)}</div>
+              <div className="founder-actions">
+                <Button asChild variant="gold" className="h-11 px-6 gap-4 text-xs"><a href="/waleed/">View my portfolio <ArrowRight /></a></Button>
+                <a className="founder-link" href="https://github.com/Mohammmed-Waleed" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+                <a className="founder-link" href="mailto:waleed@getmanara.online">waleed@getmanara.online</a>
+              </div>
+            </div>
+          </div>
         </section>
 
         <section className="section industries-section" aria-labelledby="industries-heading"><div className="container industries-layout"><div className="reveal"><p className="eyebrow">Industries we serve</p><h2 id="industries-heading">Expertise without boundaries.</h2></div><div className="industry-tags reveal">{industries.map((industry) => <span key={industry}>{industry}</span>)}</div></div></section>
